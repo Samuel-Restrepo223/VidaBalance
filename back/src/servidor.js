@@ -1,11 +1,11 @@
-import express from "express";
-import morgan from "morgan";
+import express from "express"; //para realizar la conexion con el servidor 
+import morgan from "morgan";// monitorear solicitudes http
 
-const servidor = express ();
+const servidor = express();
 servidor.use(morgan("dev"));
 servidor.use(express.json());
 
-servidor.get('/',(sol , res)=>{
+servidor.get('/', (sol, res)=>{
     res.status(404).send("No encontrado");
 });
 
