@@ -1,14 +1,33 @@
-import { Schema, model} from 'mongoose';
+import mongoose from 'mongoose';
 
-const esquemaTareas = new Schema({
-    titulo:{type: String, required: true},
-    descripcion: {type: String, required: true},
-    estado: {type: String, required: true},
-    fechaDeVancimiento: {type: Date, require: true}
-},
-{
-    versionKey: false,
-    timestamps: true
+const tareaSchema = new mongoose.Schema({
+  titulo: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  descripcion: {
+    type: String,
+    trim: true
+  },
+  fecha: {
+    type: Date,
+    default: Date.now
+  },
+  estado: {
+    type: String,
+    enum: ['pendiente', 'en ejecucion', 'retenida', 'finalizada'],
+    default: 'pendiente'
+  },
+  calificacion: {
+    type: Number,
+    min: 1,
+    max: 5
+  },
+  usuario: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Usuario'
+  }
 });
 
-export default model('productos',esquemaTareas);
+export default mongoose.model('Tarea', tareaSchema);

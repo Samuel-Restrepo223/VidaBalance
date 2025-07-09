@@ -1,21 +1,19 @@
-import { match } from 'assert';
-import { Schema, model} from 'mongoose';
+import Usuario from "../models/modelUser.js";
+
+export const loginUsuario = async (req, res) => {
+  const { email, contrasena } = req.body;
+
+  try {
+    const usuario = await Usuario.findOne({ email });
+
+    if (!usuario || usuario.contrasena !== contrasena) {
+      return res.status(401).json({ mensaje: "Credenciales incorrectas" });
+    }
+
+    res.json({ mensaje: "Inicio de sesión exitoso", usuario });
+  } catch (error) {
+    res.status(500).json({ mensaje: "Error al iniciar sesión", error });
+  }
+};
 
 
-const schemaUser = new Schema({
-    name: {type: String, required: true, trim: true},
-    email: {
-        type: String, 
-        required: true,
-        match:[/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/, "email ivalid"]
-    },
-    password: {
-        type: String, 
-        required: true,
-        trim: true, 
-        match:[/^(?=.*[!@#$%^&*()_\-+={}[\]|\\:;"'<>,.?/~`])\S+$/,"password invalid"] 
-    },
-   
-});
-
-export default model ('User', schemaUser);
