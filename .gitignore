@@ -1,4 +1,5 @@
 node_modules/
+packege-lock.json
 
 .env
 
