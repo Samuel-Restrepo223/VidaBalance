@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f5f5;
+  background-color: #e09d65;
   color: #333;
   margin: 0;
   padding: 0;
@@ -142,4 +142,163 @@ button:hover {
   color: #666;
 }
 
-/*estilos home*/
+/*del otro archivo:*/
+/* Contenedor principal */
+.container.tasks-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Título */
+.container.tasks-container h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+/* Formulario de tareas */
+#taskForm {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+#taskForm input[type="text"],
+#taskForm input[type="date"],
+#taskForm input[type="number"],
+#taskForm textarea,
+#taskForm select {
+  flex: 1 1 48%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+#taskForm textarea {
+  flex: 1 1 100%;
+  resize: vertical;
+  min-height: 80px;
+}
+
+#taskForm button {
+  padding: 12px 25px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  flex: 1 1 48%;
+}
+
+#taskForm button:hover {
+  background-color: #45a049;
+}
+
+#cancelEdit {
+  background-color: #f44336;
+}
+
+#cancelEdit:hover {
+  background-color: #e53935;
+}
+
+/* Lista de tareas */
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#taskList li {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px 20px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease;
+}
+
+#taskList li:hover {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Botón eliminar dentro de cada tarea */
+#taskList li button.delete-btn {
+  background-color: #f44336;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+#taskList li button.delete-btn:hover {
+  background-color: #e53935;
+}
+
+/* Botón Cerrar sesión */
+#logoutBtn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+  float: right;
+  transition: background-color 0.3s ease;
+}
+
+#logoutBtn:hover {
+  background-color: #e53935;
+}
+
+/* Imagen usuario en tareas */
+#userImage {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mensajes de error */
+.error-msg {
+  color: #f44336;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  #taskForm input[type="text"],
+  #taskForm input[type="date"],
+  #taskForm input[type="number"],
+  #taskForm select,
+  #taskForm button {
+    flex: 1 1 100%;
+  }
+}

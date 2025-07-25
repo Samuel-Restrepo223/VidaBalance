@@ -9,7 +9,7 @@ async function fetchTasks(token) {
   return res.json();
 }
 
-// Función para mostrar tareas en consola (puedes adaptar para mostrar en UI)
+// muestra tareas en consola 
 function mostrarTareas(tareas) {
   console.clear();
   console.log('Tareas actuales:');
@@ -18,6 +18,25 @@ function mostrarTareas(tareas) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+  // Botón Login - redirige a index.html y limpia sesión
+  const btnLogin = document.getElementById('btnLogin');
+  if (btnLogin) {
+    btnLogin.addEventListener('click', () => {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = '/index.html';
+    });
+  }
+
+  // Botón Actualizar Usuario - redirige a página para actualizar usuario
+  const btnActualizarUsuario = document.getElementById('btnActualizarUsuario');
+  if (btnActualizarUsuario) {
+    btnActualizarUsuario.addEventListener('click', () => {
+      window.location.href = '/updateUser.html'; // Crea esta página para actualizar usuario
+    });
+  }
+  });
 // Manejo de botones
 document.addEventListener('DOMContentLoaded', () => {
   const token = localStorage.getItem('token');

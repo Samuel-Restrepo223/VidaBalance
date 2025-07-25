@@ -11,6 +11,47 @@ document.querySelectorAll('.togglePassword').forEach(button => {
   });
 });
 
+// --- FUNCIONALIDAD PARA home.html ---
+if (document.getElementById('userInfo')) {
+  const user = JSON.parse(localStorage.getItem('user'));
+  if (user) {
+    document.getElementById('userId').textContent = user._id || 'N/A';
+    document.getElementById('userName').textContent = user.nombre || 'N/A';
+    document.getElementById('userEmail').textContent = user.email || 'N/A';
+    const imgElement = document.getElementById('userImage');
+      if (imgElement && user.imagen) {
+      imgElement.src = user.imagen;
+      imgElement.alt = `Foto de ${user.nombre}`;
+    } else if (imgElement) {
+      imgElement.src = 'default-avatar.png'; // o alguna imagen por defecto
+      imgElement.alt = 'Sin foto';
+    }
+  }
+
+  // Botones de home.html
+  document.getElementById('btnLogin')?.addEventListener('click', () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    window.location.href = '/index.html';
+  });
+
+  document.getElementById('btnCrear')?.addEventListener('click', () => {
+    window.location.href = '/tasks.html';
+  });
+
+  document.getElementById('btnVer')?.addEventListener('click', () => {
+    window.location.href = '/tasks.html';
+  });
+
+  document.getElementById('btnActualizar')?.addEventListener('click', () => {
+    alert('Función actualizar tarea pendiente.');
+  });
+
+  document.getElementById('btnEliminar')?.addEventListener('click', () => {
+    alert('Función eliminar tarea pendiente.');
+  });
+}
+
 // --- LOGIN Y REGISTRO ---
 if (document.getElementById('loginForm')) {
   const loginForm = document.getElementById('loginForm');

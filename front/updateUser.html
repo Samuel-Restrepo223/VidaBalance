@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actualizar Usuario - VidaBalance</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<style>
+  bod{
+    background-color: beige;
+  }
+</style>
+<body>
+  <div class="container">
+    <h1>Actualiza tus datos</h1>
+    <form id="updateUserForm">
+      <input type="text" id="nombre" placeholder="Nombre completo" required />
+      <input type="email" id="email" placeholder="Correo electrónico" required />
+      <button type="submit">Actualizar</button>
+      <p id="updateMessage"></p>
+    </form>
+  </div>
+
+  <script src="updateUser.js" defer></script>
+</body>
+</html>

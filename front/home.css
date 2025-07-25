@@ -1,25 +1,43 @@
-body{
-    background-color: antiquewhite;
+body {
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
 }
+
 h1 {
-  font-size: 36px;
-  color: #f9f6f6;
+  font-size: 3rem;
+  background: linear-gradient(90deg, hsl(327, 47%, 82%), hsl(198, 83%, 77%));
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: wave 2s linear infinite;
   text-align: center;
-  text-shadow: 2px 2px 4px hsl(120, 0%, 40%); /* Sombra tipo borde */ 
-  margin-bottom: 10px; /* Reduce el espacio debajo del h1 */
+  font-family: 'Times New Roman', Times, serif;
 }
-h2{
-   font-size: 36px;
+@keyframes wave {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+h2 {
+  font-size: 2.5rem;
   color: #222;
   text-align: center;
-  text-shadow: 2px 2px 4px hsl(120, 0%, 40%); /* Sombra tipo borde */
-  margin-top: 5px; /* Reduce el espacio arriba del h2 */
+  text-shadow: 2px 2px 4px hsl(120, 0%, 40%);
+  margin-top: 5px;
 }
 
 p {
-  font-family: "Georgia", serif; /* fuente cursiva clásica y elegante */
-  font-style: italic; /* asegura que se vea en cursiva */
-    font-weight: bold; /* ← Negrilla */
+  font-family: "Georgia", serif;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 20px 20px;
 }
 
 /* Contenedor principal */
@@ -31,39 +49,56 @@ p {
   padding: 20px;
   min-height: 100vh;
   background: none;
- margin-left: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
 }
+
 /* Botón login arriba a la derecha */
 .login-button {
   position: absolute;
   top: 20px;
   right: 20px;
   padding: 10px 25px;
-  font-size: 16px;
-  font-weight: bold; /* ← Negrilla */
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   background-color: hsl(122, 60%, 67%);
   color: hsl(0, 3%, 7%);
   cursor: pointer;
   transition: background-color 0.3s ease;
-
-  /* Efecto 3D */
   box-shadow:
-    4px 4px 10px rgba(0, 0, 0, 0.3),              /* sombra externa */
-    inset -2px -2px 4px rgba(255, 255, 255, 0.2), /* sombra clara interna */
-    inset 2px 2px 4px rgba(0, 0, 0, 0.2);          /* sombra oscura interna */
+    4px 4px 10px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Contenido principal: rueda y botones */
 .main-content {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   width: 100%;
   margin-top: 60px;
   padding: 0 40px;
+  gap: 20px;
 }
+/* Contenedor para el botón actualizar usuario */
+.user-actions-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* Ajusta tamaño según necesites */
+  min-width: 180px;
+}
+
+/* Mantén estilos del botón */
+.action-button.green {
+  width: 100%; /* Que ocupe todo el ancho del contenedor */
+}
+
 /* Rueda de tareas */
 .pizza-wheel {
   display: grid;
@@ -77,15 +112,13 @@ p {
   background: linear-gradient(135deg, hwb(120 94% 5%), hwb(107 64% 5%), hsl(100, 90%, 95%));
   color: #030303;
   text-align: center;
-  /* Quita line-height para permitir multilinea */
-  /* line-height: 120px; */
-  display: flex;               /* usar flex para centrar */
-  justify-content: center;     /* centrar horizontal */
-  align-items: center;         /* centrar vertical */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 50%;
   font-weight: bold;
-  padding: 10px;               /* espacio interno para texto */
-  word-wrap: break-word;       /* permitir dividir palabras largas */
+  padding: 10px;
+  word-wrap: break-word;
   transform: rotate(-45deg);
   cursor: pointer;
   transition: transform 0.2s, box-shadow 0.2s;
@@ -93,24 +126,27 @@ p {
     4px 4px 10px rgba(0, 0, 0, 0.3),
     inset -3px -3px 6px rgba(255, 255, 255, 0.2),
     inset 3px 3px 8px rgba(0, 0, 0, 0.2);
+  min-height: 120px;
+  min-width: 120px;
 }
-/* Hover y click (efecto de presión) */
+
 .slice:hover {
   transform: rotate(-45deg) scale(1.05);
 }
-/* Botones de acción horizontalmente separados */
+
+/* Botones de acción */
 .action-buttons {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 25px;
-  transform: translate(-80px, -40px); /* ← izquierda, ↑ arriba */
+  transform: translate(-80px, -40px);
 }
 
 .action-button {
   padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold; /* ← Negrilla */
+  font-size: 1rem;
+  font-weight: bold;
   border: none;
   border-radius: 8px;
   color: rgb(8, 7, 7);
@@ -118,14 +154,11 @@ p {
   width: 180px;
   text-align: center;
   transition: all 0.3s ease;
-
-  /* Efecto 3D */
   box-shadow:
-    4px 4px 10px rgba(0, 0, 0, 0.3),              /* sombra externa */
-    inset -2px -2px 4px rgba(255, 255, 255, 0.2), /* sombra clara interna */
-    inset 2px 2px 4px rgba(0, 0, 0, 0.2);          /* sombra oscura interna */
+    4px 4px 10px rgba(0, 0, 0, 0.3),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
 
 /* Colores por botón */
 .green {
@@ -137,5 +170,43 @@ p {
 }
 
 .purple {
-  background-color: #7e57c2;
+  background-color: #7e57c2;
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pizza-wheel {
+    grid-template-columns: repeat(2, 100px);
+    grid-template-rows: repeat(2, 100px);
+    gap: 15px;
+    transform: rotate(45deg);
+  }
+
+  .slice {
+    min-width: 100px;
+    min-height: 100px;
+    font-size: 0.9rem;
+  }
+
+  .action-buttons {
+    transform: translate(0, 0);
+    gap: 15px;
+    flex-direction: right;
+  }
+
+  .action-button {
+    width: 100%;
+  }
+
+  .login-button {
+    top: 10px;
+    right: 10px;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
 }

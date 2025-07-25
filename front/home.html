@@ -13,24 +13,34 @@
     <h2>VIDABALANCE</h2>
     <p>Empieza el día con energía positiva</p>
 
-    <div class="main-content">
-      <div class="pizza-wheel">
+    <div class="main-content" style="display: flex; justify-content: space-between;">
+      <!-- Izquierda: pizza-wheel -->
+      <div class="pizza-wheel" style="flex: 1;">
         <div class="slice" id="btnCrear">CREAR TAREA</div>
         <div class="slice" id="btnVer">VER TAREA</div>
         <div class="slice" id="btnActualizar">ACTUALIZAR TAREA</div>
         <div class="slice" id="btnEliminar">ELIMINAR TAREA</div>
       </div>
 
-      <div class="action-buttons">
-        <button class="action-button green">ACTUALIZAR USUARIO</button>
+      <!-- Derecha: panel usuario -->
+      <div id="userPanel" style="flex: 0 0 250px; background: #f0fff0; padding: 15px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
+        <img id="userImage" alt="Foto de usuario" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
+        <div><strong>ID:</strong> <span id="userId"></span></div>
+        <div><strong>Nombre:</strong> <span id="userName"></span></div>
+        <div><strong>Email:</strong> <span id="userEmail"></span></div>
       </div>
     </div>
+
+    <div class="user-actions-container">
+    <button class="action-button green" id="btnActualizarUsuario">ACTUALIZAR DATOS
+    </button>
+  </div>
 
     <button id="btnLogin" class="login-button">LOGIN</button>
   </div>
 
- <script src="home.js" defer></script>
-<script src="app.js" defer></script>  
- 
+  <script src="home.js" defer></script>
+  <script src="app.js" defer></script>
 </body>
+
 </html>
