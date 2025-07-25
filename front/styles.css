@@ -1,0 +1,145 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f5f5;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+p{
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin: 20px 0;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  
+}
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  background: rgb(221, 249, 246);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);}
+h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    animation: colorchange 3s infinite alternate;
+   background:linear-gradient(40deg, rgb(224, 27, 231) 40%, rgb(192, 235, 180) 60%);
+    color: rgb(5, 5, 5);
+    border-radius: 30px;
+}
+
+h2 {
+  text-align: center;
+  color: #010c19;
+  margin-bottom: 30px;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button {
+  background-color: #2e86de;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #1b4f9c;
+}
+.error-msg {
+  color: #e74c3c;
+  text-align: center;
+  margin: 10px 0;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tabs button {
+  flex: 1;
+  margin: 0 5px;
+  padding: 12px;
+  font-weight: bold;
+  background: #ddd;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.tabs button.active {
+  background: #2e86de;
+  color: white;
+}
+#taskList {
+  list-style: none;
+  padding: 0;
+}
+#taskList li {
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #d6eaf8;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+}
+#taskList li:hover {
+  background-color: #a9cce3;
+}
+#taskList li button.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 15px;
+  background: #e74c3c;
+  border: none;
+  color: white;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+#logoutBtn {
+  background-color: #e74c3c;
+  margin-bottom: 20px;
+}
+#logoutBtn:hover {
+  background-color: #c0392b;
+}
+#cancelEdit {
+  background-color: #7f8c8d;
+}
+#cancelEdit:hover {
+  background-color: #606b6e;
+}
+.password-container {
+  position: relative;
+}
+
+.password-container input {
+  width: 100%;
+  padding-right: 40px; /* espacio del botón */
+  box-sizing: border-box;
+}
+
+.password-container button.togglePassword {
+  position: absolute;
+  right: -280px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  user-select: none;
+  padding: 0;
+  line-height: 1;
+  color: #666;
+}
+
+/*estilos home*/

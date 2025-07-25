@@ -1,0 +1,141 @@
+body{
+    background-color: antiquewhite;
+}
+h1 {
+  font-size: 36px;
+  color: #f9f6f6;
+  text-align: center;
+  text-shadow: 2px 2px 4px hsl(120, 0%, 40%); /* Sombra tipo borde */ 
+  margin-bottom: 10px; /* Reduce el espacio debajo del h1 */
+}
+h2{
+   font-size: 36px;
+  color: #222;
+  text-align: center;
+  text-shadow: 2px 2px 4px hsl(120, 0%, 40%); /* Sombra tipo borde */
+  margin-top: 5px; /* Reduce el espacio arriba del h2 */
+}
+
+p {
+  font-family: "Georgia", serif; /* fuente cursiva clásica y elegante */
+  font-style: italic; /* asegura que se vea en cursiva */
+    font-weight: bold; /* ← Negrilla */
+}
+
+/* Contenedor principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+  min-height: 100vh;
+  background: none;
+ margin-left: 40px;
+}
+/* Botón login arriba a la derecha */
+.login-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: bold; /* ← Negrilla */
+  border: none;
+  border-radius: 8px;
+  background-color: hsl(122, 60%, 67%);
+  color: hsl(0, 3%, 7%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  /* Efecto 3D */
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.3),              /* sombra externa */
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2), /* sombra clara interna */
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2);          /* sombra oscura interna */
+}
+
+/* Contenido principal: rueda y botones */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 60px;
+  padding: 0 40px;
+}
+/* Rueda de tareas */
+.pizza-wheel {
+  display: grid;
+  grid-template-columns: repeat(2, 120px);
+  grid-template-rows: repeat(2, 120px);
+  gap: 20px;
+  transform: rotate(45deg);
+}
+
+.slice {
+  background: linear-gradient(135deg, hwb(120 94% 5%), hwb(107 64% 5%), hsl(100, 90%, 95%));
+  color: #030303;
+  text-align: center;
+  /* Quita line-height para permitir multilinea */
+  /* line-height: 120px; */
+  display: flex;               /* usar flex para centrar */
+  justify-content: center;     /* centrar horizontal */
+  align-items: center;         /* centrar vertical */
+  border-radius: 50%;
+  font-weight: bold;
+  padding: 10px;               /* espacio interno para texto */
+  word-wrap: break-word;       /* permitir dividir palabras largas */
+  transform: rotate(-45deg);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.3),
+    inset -3px -3px 6px rgba(255, 255, 255, 0.2),
+    inset 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+/* Hover y click (efecto de presión) */
+.slice:hover {
+  transform: rotate(-45deg) scale(1.05);
+}
+/* Botones de acción horizontalmente separados */
+.action-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 25px;
+  transform: translate(-80px, -40px); /* ← izquierda, ↑ arriba */
+}
+
+.action-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold; /* ← Negrilla */
+  border: none;
+  border-radius: 8px;
+  color: rgb(8, 7, 7);
+  cursor: pointer;
+  width: 180px;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  /* Efecto 3D */
+  box-shadow:
+    4px 4px 10px rgba(0, 0, 0, 0.3),              /* sombra externa */
+    inset -2px -2px 4px rgba(255, 255, 255, 0.2), /* sombra clara interna */
+    inset 2px 2px 4px rgba(0, 0, 0, 0.2);          /* sombra oscura interna */
+}
+
+
+/* Colores por botón */
+.green {
+  background-color: #4caf50;
+}
+
+.orange {
+  background-color: #f3b121;
+}
+
+.purple {
+  background-color: #7e57c2;
+}

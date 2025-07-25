@@ -1,0 +1,36 @@
+<!--gestionar tareas-->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VidaBalance - Mis Tareas</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container tasks-container">
+    <h1>Mis Tareas</h1>
+<img id="userImage" alt="Foto de usuario" style="width:100px; height:100px; border-radius:50%; object-fit:cover; margin-bottom:15px;" />
+<button id="logoutBtn">Cerrar Sesión</button>
+
+    <form id="taskForm">
+      <input type="hidden" id="taskId" />
+      <input type="text" id="titulo" placeholder="Título" required />
+      <textarea id="descripcion" placeholder="Descripción" required></textarea>
+      <input type="date" id="fechaVencimiento" required />
+      <select id="estado">
+        <option value="pendiente">Pendiente</option>
+        <option value="en progreso">En progreso</option>
+        <option value="completada">Completada</option>
+      </select>
+      <input type="number" id="calificacion" min="0" max="5" placeholder="Calificación (0-5)" />
+      <button type="submit">Guardar Tarea</button>
+      <button type="button" id="cancelEdit" style="display:none;">Cancelar</button>
+    </form>
+
+    <ul id="taskList"></ul>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
