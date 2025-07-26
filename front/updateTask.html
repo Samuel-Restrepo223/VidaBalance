@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Actualizar Tarea - VidaBalance</title>
+  <link rel="stylesheet" href="styless.css" />
+  <!--logo de la pagina= -->
+    <link rel="shortcut icon" href="./assets/fondo.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <h1>Actualizar Tarea</h1>
+    <form id="updateTaskForm">
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" required />
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" required></textarea>
+      <label for="fechaDeVencimiento">Fecha de vencimiento</label>
+      <input type="date" id="fechaDeVencimiento" required />
+      <label for="estado">Estado</label>
+      <select id="estado">
+        <option value="pendiente">Pendiente</option>
+        <option value="en progreso">En progreso</option>
+        <option value="completada">Completada</option>
+      </select>
+      <label for="calificacion">Calificación</label>
+      <input type="number" id="calificacion" min="0" max="5" />
+      <button type="submit">Actualizar</button>
+      <p id="updateMessage"></p>
+    </form>
+  </div>
+  <script src="updateTask.js" defer></script>
+</body>
+</html>

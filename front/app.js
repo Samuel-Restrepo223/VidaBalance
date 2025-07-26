@@ -12,21 +12,24 @@ document.querySelectorAll('.togglePassword').forEach(button => {
 });
 
 // --- FUNCIONALIDAD PARA home.html ---
-if (document.getElementById('userInfo')) {
+if (document.getElementById('userPanel')) {
   const user = JSON.parse(localStorage.getItem('user'));
+  const token = localStorage.getItem('token');
   if (user) {
     document.getElementById('userId').textContent = user._id || 'N/A';
     document.getElementById('userName').textContent = user.nombre || 'N/A';
     document.getElementById('userEmail').textContent = user.email || 'N/A';
+    document.getElementById('userToken').textContent = token || 'N/A';
     const imgElement = document.getElementById('userImage');
-      if (imgElement && user.imagen) {
+    if (imgElement && user.imagen) {
       imgElement.src = user.imagen;
       imgElement.alt = `Foto de ${user.nombre}`;
     } else if (imgElement) {
-      imgElement.src = 'default-avatar.png'; // o alguna imagen por defecto
+      imgElement.src = 'default-avatar.png';
       imgElement.alt = 'Sin foto';
     }
   }
+}
 
   // Botones de home.html
   document.getElementById('btnLogin')?.addEventListener('click', () => {
@@ -36,21 +39,20 @@ if (document.getElementById('userInfo')) {
   });
 
   document.getElementById('btnCrear')?.addEventListener('click', () => {
-    window.location.href = '/tasks.html';
+    window.location.href = '/createTask.html';
   });
 
   document.getElementById('btnVer')?.addEventListener('click', () => {
-    window.location.href = '/tasks.html';
+    window.location.href = '/viewTasks.html';
   });
 
   document.getElementById('btnActualizar')?.addEventListener('click', () => {
-    alert('Función actualizar tarea pendiente.');
+   window.location.href = '/updateTask.html';
   });
 
   document.getElementById('btnEliminar')?.addEventListener('click', () => {
-    alert('Función eliminar tarea pendiente.');
+    window.location.href = '/deleteTask.html';
   });
-}
 
 // --- LOGIN Y REGISTRO ---
 if (document.getElementById('loginForm')) {

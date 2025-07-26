@@ -3,39 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <title>Crear Tarea - VidaBalance</title>
-  <link rel="stylesheet" href="create.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-
+  <link rel="stylesheet" href="styless.css" />
+  <!--logo de la pagina= -->
+    <link rel="shortcut icon" href="./assets/fondo.png" type="image/x-icon">
 </head>
 <body>
   <div class="container">
     <h1>Crear Nueva Tarea</h1>
-   <form id="createTaskForm">
-  <label for="titulo"><i class="bi bi-card-text"></i> Título</label>
-  <input type="text" id="titulo" placeholder="Título" required />
+    <form id="createTaskForm">
+      <label for="titulo">Título:</label>
+      <input type="text" id="titulo" placeholder="Título" required />
 
-  <label for="descripcion"><i class="bi bi-chat-text"></i> Descripción</label>
-  <textarea id="descripcion" placeholder="Descripción" required></textarea>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" placeholder="Descripción" required></textarea>
 
-  <label for="fechaVencimiento"><i class="bi bi-calendar-date"></i> Fecha de vencimiento</label>
-  <input type="date" id="fechaVencimiento" required />
+      <label for="fechaDeVencimiento">Fecha de vencimiento:</label>
+      <input type="date" id="fechaDeVencimiento" required />
 
-  <label for="estado"><i class="bi bi-list-check"></i> Estado</label>
-  <select id="estado">
-    <option value="pendiente">Pendiente</option>
-    <option value="en progreso">En progreso</option>
-    <option value="completada">Completada</option>
-  </select>
+      <label for="estado">Estado:</label>
+      <select id="estado">
+        <option value="pendiente">Pendiente</option>
+        <option value="en progreso">En progreso</option>
+        <option value="completada">Completada</option>
+      </select>
 
-  <label for="calificacion"><i class="bi bi-star"></i> Calificación</label>
-  <input type="number" id="calificacion" min="0" max="5" placeholder="Calificación (0-5)" />
+      <label for="calificacion">Calificación:</label>
+      <input type="number" id="calificacion" min="0" max="5" placeholder="Calificación (0-5)" />
 
-  <button type="submit">
-    <i class="bi bi-plus-circle"></i> Crear Tarea
-  </button>
-</form>
-<p id="message"></p>
-
+      <button type="submit">Crear Tarea</button>
+    </form>
+    <p id="message"></p>
   </div>
 
   <script src="createTask.js" defer></script>

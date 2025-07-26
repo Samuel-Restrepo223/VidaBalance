@@ -14,7 +14,7 @@ p{
   
 }
 .container {
-  max-width: 600px;
+  max-width: 800px;
   margin: 60px auto;
   background: rgb(221, 249, 246);
   padding: 25px;
@@ -301,4 +301,13 @@ button:hover {
   #taskForm button {
     flex: 1 1 100%;
   }
+}
+@media(max-width: 600px){
+  .container {
+  max-width: 1000px;
+  margin: 60px auto;
+  background: rgb(221, 249, 246);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);}
 }

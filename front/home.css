@@ -31,6 +31,17 @@ h2 {
   text-shadow: 2px 2px 4px hsl(120, 0%, 40%);
   margin-top: 5px;
 }
+/*saludo*/
+/* Contenido principal: rueda y botones */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 60px;
+  padding: 0 40px;
+}
+
 
 p {
   font-family: "Georgia", serif;
@@ -158,6 +169,43 @@ p {
     4px 4px 10px rgba(0, 0, 0, 0.3),
     inset -2px -2px 4px rgba(255, 255, 255, 0.2),
     inset 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#userPanel {
+  position: fixed;
+  bottom: 15px;           /* Fijo abajo */
+  right: 15px;            /* Fijo a la derecha */
+  background: #f0fff0;
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  z-index: 1000;          /* Para que esté encima */
+}
+
+/* Imagen usuario */
+#userPanel img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #4caf50;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Datos usuario */
+#userPanel div {
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+#userPanel strong {
+  color: #4caf50;
 }
 
 /* Colores por botón */

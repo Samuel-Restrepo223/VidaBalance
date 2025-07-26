@@ -3,33 +3,75 @@
 <head>
   <meta charset="UTF-8" />
   <title>VidaBalance - Inicio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="home.css" />
    <!--logo de la pagina= -->
     <link rel="shortcut icon" href="./assets/fondo.png" type="image/x-icon">
 </head>
 <body>
   <div class="container">
+    <i class="fa-regular fa-calendar fa-2xl" style="color: #FFD43B;"></i>
     <h1>ASIGNADOR DE TAREAS</h1>
+    <p>Bienvenido a VidaBalance, tu asistente personal para organizar tus tareas y actividades diarias.</p>
+
     <h2>VIDABALANCE</h2>
-    <p>Empieza el día con energía positiva</p>
+ 
+    <!--saludo-->
+    <div id="userGreetingContainer" style="
+    position: left;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-10%);
+  background-color: #f8e1f3;
+  border-radius: 25px;
+  box-shadow: 0 0 8px rgba(234, 174, 215, 0.7);
+  align-items: left;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #7a2a55;
+  z-index: 1000;
+
+">
+  <span id="userGreetingText">Hola, </span>
+  <span id="userNameGreeting">Usuario</span>
+  <i class="fa-regular fa-hand fa-xl" style="color: #d3289d;"></i>
+</div>
+    <p><i class="fa-regular fa-thumbs-up fa-2xl" style="color: #2aeae7;"></i>Empieza el día con energía positiva<i class="fa-solid fa-face-smile fa-beat-fade fa-2xl" style="color: #B197FC;"></i></p>
 
     <div class="main-content" style="display: flex; justify-content: space-between;">
       <!-- Izquierda: pizza-wheel -->
       <div class="pizza-wheel" style="flex: 1;">
-        <div class="slice" id="btnCrear">CREAR TAREA</div>
-        <div class="slice" id="btnVer">VER TAREA</div>
+        <div class="slice" id="btnCrear">CREAR TAREAS</div>
+        <div class="slice" id="btnVer">VER TAREAS</div>
         <div class="slice" id="btnActualizar">ACTUALIZAR TAREA</div>
-        <div class="slice" id="btnEliminar">ELIMINAR TAREA</div>
+        <div class="slice" id="btnEliminar">ELIMINAR TAREAS</div>
       </div>
 
-      <!-- Derecha: panel usuario -->
-      <div id="userPanel" style="flex: 0 0 250px; background: #f0fff0; padding: 15px; border-radius: 8px; box-shadow: 0 0 8px rgba(0,0,0,0.1);">
-        <img id="userImage" alt="Foto de usuario" style="width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;" />
-        <div><strong>ID:</strong> <span id="userId"></span></div>
-        <div><strong>Nombre:</strong> <span id="userName"></span></div>
-        <div><strong>Email:</strong> <span id="userEmail"></span></div>
-      </div>
-    </div>
+      <div id="userPanel" style="
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: #f0fff0;
+  padding: 15px;
+  border-radius: 8px;
+  width: 250px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  z-index: 1000;
+">
+  <img id="userImage" alt="Foto de usuario" style="
+    width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 10px; border: 3px solid #4caf50; margin-left: auto; margin-right: auto;
+  " />
+  <div><strong>ID:</strong> <span id="userId"></span></div>
+  <div><strong>Nombre:</strong> <span id="userName"></span></div>
+  <div><strong>Email:</strong> <span id="userEmail"></span></div>
+  <div><strong>Token:</strong> <small id="userToken" style="word-break: break-all;"></small></div>
+</div>
+
+
 
     <div class="user-actions-container">
     <button class="action-button green" id="btnActualizarUsuario">ACTUALIZAR DATOS
